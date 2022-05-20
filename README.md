@@ -2,7 +2,7 @@
 
 ## Description
 
-For our cafe we will create an interractable platform that will be user friendly for both customers and admin. In order to do this we will be incorporating Postman to test out requests and then incorporating those requests into our front end.
+For our cafe we will create an interractable platform that will be user friendly for both customers and admin. In order to do this we will be incorporating Postman to test out requests and then incorporate those requests into our front end.
 
 # User Stories
 
