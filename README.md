@@ -22,3 +22,18 @@ For our cafe we will create an interractable platform that will be user friendly
 -   [ ] Favorite an order
 -   [ ] View past orders by date
 -   [ ] Pay off your balance with your credit card
+
+## Tech Stack
+
+-   [ ] Java 8
+-   [ ] JUnit
+-   [ ] Mockito
+-   [ ] Apache Maven
+-   [ ] Hibernate
+-   [ ] Jackson library (for JSON marshalling/unmarshalling)
+-   [ ] Java EE Servlet API (v4.0+)
+-   [ ] Azure SQL
+-   [ ] ReactJS Frontend
+-   [ ] Git SCM (on GitHub)
+-   [ ] Azure WebApps (Potentially)
+-   [ ] Postman
