@@ -13,9 +13,9 @@ export default function CreateMenuItem(){
     async function createmenuItems(){
 
         const menuItem = {
-            item_name: itemnameInput.current.value,
+            menuItem: itemnameInput.current.value,
             cost: costInput.current.value,
-            is_substitutable: isSubstitutableInput.current.value,
+            isSubstitutable: isSubstitutableInput.current.value,
             protein: proteinInput.current.value
         }
 
