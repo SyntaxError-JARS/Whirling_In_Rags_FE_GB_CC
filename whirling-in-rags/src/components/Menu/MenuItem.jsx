@@ -1,12 +1,12 @@
 import axios from "axios"
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function MenuItem(){
 
     const [menuBody, setMenuBody] = useState();
 
 
-
+    // const menuitemInputs = useRef();
 
 
     const url = "https://whrilinginrags.azurewebsites.net"
@@ -39,6 +39,24 @@ export default function MenuItem(){
     }
 
 
+    // async function findAsingleItem(){
+        
+    //     const menuItem = {
+    //         menuItem: "Chicken"
+    //     } 
+
+    //     try{
+    //     const response = await axios.get(`${url}/menu/whirling-in-rangs-menu`, menuItem)
+            
+    //     console.log(response)
+    //     console.log(response.data)
+    //     }catch(error){
+    //     console.error(error.response.data)
+    //     console.log(error)
+    //= }
+    //}
+
+
 
 
     return(
@@ -47,8 +65,11 @@ export default function MenuItem(){
         <h3>Welcome, To The Whirling in Rags Menu Page</h3>
         
         <br></br>
+        {/* <input key= "single" placeholder="Enter here the menu item you are looking for" ref={menuitemInputs}> </input> */}
         <br></br>
-        <button key="menu items"onClick={getAllMenuItems}>Press to See All of the Menu Items</button>
+        {/* <button  onClick={findAsingleItem}>Press to Find the Item you are looking for</button> */}
+        <br></br>
+        <button onClick={getAllMenuItems}>Press to Find All of the Menu Items</button>
     
         <table>
             <thead>
