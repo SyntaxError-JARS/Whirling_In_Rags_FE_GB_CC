@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
+import './MenuTable.css';
 
 export default function CreateMenuItem(){
 
