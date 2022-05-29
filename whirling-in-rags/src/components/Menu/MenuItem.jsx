@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function MenuItem(){
 
@@ -22,7 +22,7 @@ export default function MenuItem(){
                 <tr>
                     <td>{e.menuItem}</td>
                     <td>{e.cost}</td>
-                    <td>{e.isSubstitutable}</td>
+                    <td>{String(e.isSubstitutable)}</td>
                     <td>{e.protein}</td>
                 </tr>
             )
