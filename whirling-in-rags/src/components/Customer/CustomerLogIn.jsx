@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useRef } from "react";
 // import { useNavigate } from "react-router-dom";
-// import { userContext } from "../../App";
+//import { userContext } from "../../App";
 
 export default function CustomerLogIn() {
     const usernameInput = useRef();
     const passwordInput = useRef();
-    // const [user, setUser] = useContext(userContext);
+     //const [user, setUser] = useContext(userContext);
     // const navigate = useNavigate();
     const url = "https://whrilinginrags.azurewebsites.net";
 
