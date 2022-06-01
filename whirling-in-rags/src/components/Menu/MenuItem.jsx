@@ -5,6 +5,7 @@ export default function MenuItem(){
 
     
     const [menuBody, setMenuBody] = useState();
+    const [singleMenuItem, setSingleMenuItem] = useState();
 
 
     const menuitemInputs = useRef();
@@ -43,16 +44,17 @@ export default function MenuItem(){
 
     async function findAsingleItem(){
         
-        // const menuItemIN = {
-        //     menuItem: menuitemInputs.current.value
-        // } 
+        const menuitem =  menuitemInputs.current.value
+        
 
+    
         try{
-        const response = await axios.get(`${url}/menu/whirling-in-rangs-menu` , {
-            menuItemIN : menuitemInputs.current.value
-        }).then(response => {
-            return response.data
-        })
+        const encodedValue = encodeURIComponent(menuitem)
+        console.log(menuitem)
+        const response = await axios.get(`${url}/menu/whirling-in-rangs-menu?menuItem=${encodedValue}`)
+        
+        
+         
         
             
         console.log(response)
