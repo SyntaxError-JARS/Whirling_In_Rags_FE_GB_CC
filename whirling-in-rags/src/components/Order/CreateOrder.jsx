@@ -1,69 +1,65 @@
-import { useRef } from "react";
+
 import axios from "axios";
+import { useRef } from "react";
+import './OrderTable.css';
 
-export default function CustomerRegister(){
+export default function CreateOrder(){
 
-    const fnameInput = useRef();
-    const lnameInput = useRef();
+    const idInput = useRef();
+    const menuItemInput = useRef();
+    const commentInput = useRef();
+    const isFavoriteInput = useRef();
+    const orderDateInput = useRef();
     const usernameInput = useRef();
-    const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
-
-
-    // const customer = {
-
-    //     fname: "Geoffrey",
-    //     lname: "Blois",
-    //     username: "movie",
-    //     password: "blois",
-    //     balance:  0,
-    //     isAdmin: false
-    // }
+   
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
-    async function customerReg(){
+    async function addOrder(){
 
-        const customer = {
-
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
-            username: usernameInput.current.value,
-            password: passwordInput.current.value,
-            balance:  0,
-            isAdmin: false
+        const order = {
+            id: idInput.current.value,
+            menuItem: menuItemInput.current.value,
+            comment: commentInput.current.value,
+            isFavorite: isFavoriteInput.current.value,
+            orderDate: orderDateInput.current.value,
+            username: usernameInput.current.value
         }
 
+
         try{
-        const response = await axios.post(`${url}/customer/register` , customer)
-        // balance = 0;
-        // isAdmin = false;
-        console.log(response)
-        } catch(error){
+            const response = await axios.post(`${url}/order/createorder` , order )
+            console.log(response)
+            console.log(response.data)
+        }catch(error){
             console.error(error.response.data)
             console.log(error)
         }
+
     }
+
 
     return(
         <>
-        <h3>Welcome, Please Enter Your Information Below To Sign Up</h3>
+        <h3>Welcome, Please Enter Your Order Below</h3>
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Enter First Name" ref={fnameInput}></input>
+        <input placeholder="Enter ID" ref={idInput}></input>
         <br></br>
-        <input placeholder="Enter Last Name" ref={lnameInput}></input>
+        <input placeholder="Enter Menu Item" ref={menuItemInput}></input>
         <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
+        <input placeholder="Enter A Comment" ref={commentInput}></input>
         <br></br>
-        <input type="password" placeholder="Enter password" ref={passwordInput}></input>
+        <input  placeholder="Favorite Item" ref={isFavoriteInput}></input>
         <br></br>
-        <button onClick={customerReg}>Register</button>
-
-
+        <input  placeholder="Date" ref={orderDateInput}></input>
+        <br></br>
+        <input  placeholder="Username" ref={usernameInput}></input>
+        <br></br>
+        <button onClick={addOrder}>Create Order</button>
         </>
     )
 
-} 
+
+}
