@@ -18,11 +18,11 @@ export default function DeleteCreditCard(){
 
 
         try{
-            const response = await axios.delete((`${url}/Credit/delete` , usernameIn ))
+            const encodedValue = encodeURIComponent(usernameIn);
+            const response = await axios.delete((`${url}/Credit/delete?username=${encodedValue}` , usernameIn ))
             console.log(response)
             console.log(response.data)
         }catch (error){
-            console.error(error.response.data)
             console.error(error)
         }
 
