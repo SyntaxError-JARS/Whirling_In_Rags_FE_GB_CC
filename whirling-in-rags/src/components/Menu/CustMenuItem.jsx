@@ -1,8 +1,10 @@
 import axios from "axios"
 import { useRef, useState } from "react";
-import { NavBar } from "../NavBar";
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
 
-export default function MenuItem(){
+
+
+export default function CustMenuItem(){
 
     
     const [menuBody, setMenuBody] = useState();
@@ -68,8 +70,9 @@ export default function MenuItem(){
 
     return(
         <>
-        <NavBar />
-    
+        
+        <CustomerNavBar />
+     
         <h3>Welcome, To The Whirling in Rags Menu Page</h3>
         
         <br></br>
@@ -94,4 +97,3 @@ export default function MenuItem(){
         </>
     )
 }
-

@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useRef } from "react"
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
+
+
 
 export default function DeleteCreditCard(){
 
 
-    const usernameInput = useRef();
+    const cardNumberInput = useRef();
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
@@ -12,13 +15,13 @@ export default function DeleteCreditCard(){
 
     async function deleteCreditCard(){
 
-        const usernameIn = {
-            username: "sarahs"
+        const Credit = {
+            cardNumber: cardNumberInput.current.value
         }
 
 
         try{
-            const response = await axios.delete((`${url}/Credit/delete` , usernameIn ))
+            const response = await axios.delete((`${url}/Credit/delete-card` , cardNumberInput.current.value ))
             console.log(response)
             console.log(response.data)
         }catch (error){
@@ -30,11 +33,12 @@ export default function DeleteCreditCard(){
 
     return(
         <>
+        <CustomerNavBar />
           <h3>Are you sure you want to delete your creditcard? If so please enter your username and hit the delete credit card button.</h3>
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Enter your username" ref={usernameInput}></input>
+        <input placeholder="Enter your credit card" ref={cardNumberInput}></input>
         <br></br>
         <button onClick={deleteCreditCard}>Delete CreditCard</button>
         </>
