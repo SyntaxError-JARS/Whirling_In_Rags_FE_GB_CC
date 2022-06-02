@@ -13,6 +13,7 @@ import MenuItem from "./components/Menu/MenuItem";
 import CreateOrder from "./components/Order/CreateOrder";
 import ViewOrders from "./components/Order/ViewOrders";
 import Welcome from "./components/Welcome";
+import CustomerDelete from "./components/Customer/CustomerDelete";
 
 
 /*function App() {
@@ -57,6 +58,7 @@ function App(){
         <Route path="customer/add-card" element={<AddCreditCard />} />
         <Route path="" element={<Welcome />} />
         <Route path="customer" element={<CustomerDashboard />} />
+        <Route path="/customer/delete-account" element={<CustomerDelete />} />
         <Route path="admin" element={<AdminDashboard />} />
         </Routes>
     </userContext.Provider>
