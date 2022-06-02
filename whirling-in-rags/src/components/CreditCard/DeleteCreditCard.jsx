@@ -4,7 +4,7 @@ import { useRef } from "react"
 export default function DeleteCreditCard(){
 
 
-    const usernameInput = useRef();
+    const creditCardInput = useRef();
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
@@ -12,14 +12,14 @@ export default function DeleteCreditCard(){
 
     async function deleteCreditCard(){
 
-        const usernameIn = {
-            username: "sarahs"
+        const creditCardIn = {
+            cardNumber: creditCardInput.current.value
         }
 
 
         try{
-            const encodedValue = encodeURIComponent(usernameIn);
-            const response = await axios.delete((`${url}/Credit/delete?username=${encodedValue}` , usernameIn ))
+            const encodedValue = encodeURIComponent(creditCardIn);
+            const response = await axios.delete((`${url}/Credit/delete?cardNumber=${encodedValue}` , creditCardIn ))
             console.log(response)
             console.log(response.data)
         }catch (error){
@@ -34,7 +34,7 @@ export default function DeleteCreditCard(){
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Enter your username" ref={usernameInput}></input>
+        <input placeholder="Enter your username" ref={creditCardInput}></input>
         <br></br>
         <button onClick={deleteCreditCard}>Delete CreditCard</button>
         </>
