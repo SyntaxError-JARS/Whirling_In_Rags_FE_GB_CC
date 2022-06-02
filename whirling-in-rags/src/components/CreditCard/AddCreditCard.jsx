@@ -1,5 +1,8 @@
 import { useRef } from "react";
 import axios from "axios";
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
+
+
 
 export default function AddCreditCard(){
 
@@ -39,6 +42,7 @@ export default function AddCreditCard(){
 
     return(
         <>
+        <CustomerNavBar />
         <h3>Please Enter Your Credit Card Information Below</h3>
         <br></br>
         <br></br>

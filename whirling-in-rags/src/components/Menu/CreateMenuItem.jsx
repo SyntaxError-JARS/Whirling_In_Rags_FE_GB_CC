@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
+import { AdminNavBar } from "../Admin/AdminNavBar";
 import './MenuTable.css';
 
 export default function CreateMenuItem(){
@@ -35,6 +36,7 @@ export default function CreateMenuItem(){
 
     return(
         <>
+        <AdminNavBar />
         <h3>Welcome, Please Enter The New Item You Would Like To Add To The Menu</h3>
         <br></br>
         <br></br>

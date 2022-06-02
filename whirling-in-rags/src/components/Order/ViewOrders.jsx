@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
+
 import './OrderTable.css';
 
 export default function ViewOrders(){
@@ -40,7 +42,7 @@ export default function ViewOrders(){
 
     return(
         <>
-     
+     <CustomerNavBar />
         <h3>Welcome to the Orders Page</h3>
         
         
