@@ -4,9 +4,10 @@ import { NavBar } from "../NavBar";
 
 export default function MenuItem(){
 
-    
+ 
     const [menuBody, setMenuBody] = useState();
     //const [singleMenuItem, setSingleMenuItem] = useState();
+
 
 
     const menuitemInputs = useRef();
@@ -53,15 +54,31 @@ export default function MenuItem(){
         const encodedValue = encodeURIComponent(menuitem)
         console.log(menuitem)
         const response = await axios.get(`${url}/menu/whirling-in-rangs-menu?menuItem=${encodedValue}`)
-        
-        
+        const item = await response.data;
+        console.log(item)
+        const map = {a:response.data}
+        const newArray = Object.values(map)
+        console.log(newArray)
+        const menuItemTableRow = newArray.map((e) => {
+            return (
+                <tr>
+                    
+                    <td>{e.menuItem}</td>
+                    <td>{e.cost}</td>
+                    <td>{String(e.isSubstitutable)}</td>
+                    <td>{e.protein}</td>
+                </tr>
+            )
+           
+        })
+        setMenuBody(menuItemTableRow)
          
         
             
         console.log(response)
         console.log(response.data)
         }catch(error){
-        console.error(error.response.data)
+        console.error(error)
         console.log(error)
      }
     }
@@ -82,6 +99,7 @@ export default function MenuItem(){
         <table>
             <thead>
                 <tr>
+                    
                     <th>Item Name</th>
                     <th>Cost</th>
                     <th>Is isSubstitutable</th>
