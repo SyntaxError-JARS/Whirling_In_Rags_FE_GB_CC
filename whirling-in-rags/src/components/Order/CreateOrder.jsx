@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useRef } from "react";
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
+
 import './OrderTable.css';
 
 export default function CreateOrder(){
@@ -40,6 +42,7 @@ export default function CreateOrder(){
 
     return(
         <>
+        <CustomerNavBar />
         <h3>Welcome, Please Enter Your Order Below</h3>
         <br></br>
         <br></br>
