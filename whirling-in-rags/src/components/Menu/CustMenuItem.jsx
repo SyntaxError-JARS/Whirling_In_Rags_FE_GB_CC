@@ -81,7 +81,6 @@ export default function CustMenuItem(){
         <button  onClick={findAsingleItem}>Press to Find the Item you are looking for</button>
         <br></br>
         <button onClick={getAllMenuItems}>Press to Find All of the Menu Items</button>
-    
         <table>
             <thead>
                 <tr>

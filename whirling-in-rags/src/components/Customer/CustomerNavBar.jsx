@@ -13,6 +13,8 @@ export function CustomerNavBar(){
         <button onClick={() => navigate("/customer/add-card")}>Add a Credit Card</button>
         <button onClick={() => navigate("/customer/delete-card")}>Delete a Credit Card</button>
         <button onClick={() => navigate("/customer/delete-account")}>Delete your account</button>
+        <button onClick={() => navigate("/customer/update-username")}>Update your account</button>
+        
         <button onClick={() => navigate("/")}>Logout</button>
 
 

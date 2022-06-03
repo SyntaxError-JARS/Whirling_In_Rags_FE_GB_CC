@@ -21,8 +21,9 @@ export default function DeleteCreditCard(){
 
 
         try{
+            console.log(Math.random())
             const response = await axios.delete(`${url}/Credit/delete-card?cardNumber=${creditCardInput.current.value}` )
-
+            
             console.log(response)
             console.log(response.data)
         }catch (error){
