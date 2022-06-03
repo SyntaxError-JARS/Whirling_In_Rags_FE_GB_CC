@@ -14,6 +14,7 @@ import CreateOrder from "./components/Order/CreateOrder";
 import ViewOrders from "./components/Order/ViewOrders";
 import Welcome from "./components/Welcome";
 import DeleteMenuItem from "./components/Menu/DeleteMenuItem";
+import DeleteOrder from "./components/Order/DeleteOrder";
 
 
 /*function App() {
@@ -60,6 +61,7 @@ function App(){
         <Route path="" element={<Welcome />} />
         <Route path="customer" element={<CustomerDashboard />} />
         <Route path="admin" element={<AdminDashboard />} />
+        <Route path="delete-order" element={<DeleteOrder />} />
         </Routes>
     </userContext.Provider>
     </BrowserRouter>
