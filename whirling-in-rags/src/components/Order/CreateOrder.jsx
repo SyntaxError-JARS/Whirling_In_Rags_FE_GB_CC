@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CustomerNavBar } from "../Customer/CustomerNavBar";
 
 import './OrderTable.css';
 
 export default function CreateOrder(){
 
+    const [num, setNum] = useState(0);
     //const idInput = useRef();
     const menuItemInput = useRef();
     const commentInput = useRef();
@@ -16,16 +17,25 @@ export default function CreateOrder(){
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
+    
+
     async function addOrder(){
 
+       
+
+          
+
         const order = {
-            //id: defaultValue,
+            id: num,
             menuItem: menuItemInput.current.value,
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
             orderDate: orderDateInput.current.value,
             username: usernameInput.current.value
         }
+
+        console.log(order)
+        console.log(num)
 
 
         try{
@@ -39,6 +49,12 @@ export default function CreateOrder(){
 
     }
 
+    function randomNumberInRange(min, max) {
+        // 👇️ get number between min (inclusive) and max (inclusive)
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+    const click = () => {setNum(randomNumberInRange(1,100))}
 
     return(
         <>
@@ -57,7 +73,7 @@ export default function CreateOrder(){
         <br></br>
         <input  placeholder="Username" ref={usernameInput}></input>
         <br></br>
-        <button onClick={addOrder}>Create Order</button>
+        <button onClick={() => {addOrder(); click()}}>Create Order</button>
         </>
     )
 
