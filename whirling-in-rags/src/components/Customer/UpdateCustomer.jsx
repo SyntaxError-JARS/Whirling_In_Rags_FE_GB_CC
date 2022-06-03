@@ -4,7 +4,7 @@ import { useRef } from "react"
 export default function UpdateCustomer(){
 
     //const usernameInput = useRef()
-    const oldPasswordInput = useRef()
+    const usernameInput = useRef()
     const newPasswordInput = useRef()
     
     const url = "https://whrilinginrags.azurewebsites.net"
@@ -19,12 +19,12 @@ export default function UpdateCustomer(){
 
         try{
             //const encodedParam = encodeURIComponent(oldPassword)
-            console.log(oldPasswordInput.current.value)
-            const response1 = await axios.get(`${url}/customer/update-username?password=${oldPasswordInput.current.vaule}`)
+            console.log(usernameInput.current.value)
+            const response1 = await axios.get(`${url}/customer/update-username?username=${usernameInput.current.vaule}`)
             
             const returnedUser = response1.data
             returnedUser.password = newPasswordInput
-            const response = await axios.put(`${url}/customer/update-username?password=${newPasswordInput}`)
+            const response = await axios.put(`${url}/customer/update-username`)
 
             console.log(response)
             console.log(response.data) 
@@ -44,7 +44,7 @@ export default function UpdateCustomer(){
  
     return(
         <>
-        <input placeholder="Input your current Usernaem" ref={oldPasswordInput }></input>
+        <input placeholder="Input your current Usernaem" ref={usernameInput }></input>
         <input placeholder="Input the new Username you want your account to have" ref={newPasswordInput}></input>
         <br></br>
         <button onClick={updateCustomerUsername}>Update your Account</button>

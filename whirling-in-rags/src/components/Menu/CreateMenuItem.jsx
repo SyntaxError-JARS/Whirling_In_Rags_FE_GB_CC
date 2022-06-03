@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { AdminNavBar } from "../Admin/AdminNavBar";
 import './MenuTable.css';
 
 export default function CreateMenuItem(){
+
+    const [showPost, setShowPosted] = useState(false);
 
     const itemnameInput = useRef();
     const costInput = useRef();
@@ -23,7 +25,7 @@ export default function CreateMenuItem(){
 
 
         try{
-            const response = await axios.post(`${url}/menu/createmenuitem` , menuItem )
+            const response = await axios.post(`${url}/menu/create-item` , menuItem )
             console.log(response)
             console.log(response.data)
         }catch(error){
@@ -41,15 +43,21 @@ export default function CreateMenuItem(){
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Enter the Items Name" ref={itemnameInput}></input>
+        <input placeholder="Item Name" ref={itemnameInput}></input>
         <br></br>
-        <input placeholder="Enter How Much The Item Costs" ref={costInput}></input>
+        <input placeholder="Cost" ref={costInput}></input>
         <br></br>
-        <input placeholder="Enter If The Item Can Be Substitutable" ref={isSubstitutableInput}></input>
+        <input placeholder="Can This Be Substitutable?" ref={isSubstitutableInput}></input>
         <br></br>
-        <input  placeholder="Enter How Much Protein The New Item Contains" ref={proteinInput}></input>
+        <input  placeholder="Protein" ref={proteinInput}></input>
         <br></br>
-        <button onClick={createmenuItems}>Create Item</button>
+        <button onClick={() => { 
+            createmenuItems(); 
+            setShowPosted(!showPost) 
+            }}
+            >Create Menu Item</button>
+        {showPost && <p>You Have Successfully Added This Menu Item</p>}
+        
         </>
     )
 

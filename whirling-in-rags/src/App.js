@@ -15,6 +15,9 @@ import ViewOrders from "./components/Order/ViewOrders";
 import Welcome from "./components/Welcome";
 import CustomerDelete from "./components/Customer/CustomerDelete";
 import UpdateCustomer from "./components/Customer/UpdateCustomer";
+import DeleteMenuItem from "./components/Menu/DeleteMenuItem";
+import DeleteOrder from "./components/Order/DeleteOrder";
+
 
 
 /*function App() {
@@ -51,7 +54,8 @@ function App(){
         <Route path="login" element={<CustomerLogIn />} />
         <Route path="register" element={<CustomerRegister />} />
         <Route path="customer/delete-card" element={<DeleteCreditCard />} />
-        <Route path="admin/create-item" element={<CreateMenuItem />} />
+        <Route path="create-item" element={<CreateMenuItem />} />
+        <Route path="delete-item" element={<DeleteMenuItem />} />
         <Route path="customer/view-menu" element={<CustMenuItem />} />
         <Route path="view-menu" element={<MenuItem />} />
         <Route path="customer/order" element={<CreateOrder />} />
@@ -62,6 +66,7 @@ function App(){
         <Route path="/customer/delete-account" element={<CustomerDelete />} />
         <Route path="/customer/update-username" element={<UpdateCustomer />} />
         <Route path="admin" element={<AdminDashboard />} />
+        <Route path="delete-order" element={<DeleteOrder />} />
         </Routes>
     </userContext.Provider>
     </BrowserRouter>
