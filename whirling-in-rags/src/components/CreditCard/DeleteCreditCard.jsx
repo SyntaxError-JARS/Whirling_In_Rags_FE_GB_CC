@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { CustomerNavBar } from "../Customer/CustomerNavBar";
+
 
 
 
 export default function DeleteCreditCard(){
 
+    const [showDelete, setShowDeleted] = useState(false);
 
 
     const creditCardInput = useRef();
@@ -29,6 +31,7 @@ export default function DeleteCreditCard(){
 
     }
 
+
     return(
         <>
           <CustomerNavBar />
@@ -41,7 +44,12 @@ export default function DeleteCreditCard(){
         
 
         <br></br>
-        <button onClick={deleteCreditCard}>Delete CreditCard</button>
+        <button onClick={() => { 
+            deleteCreditCard(); 
+            setShowDeleted(!showDelete) 
+            }}
+            >Delete CreditCard</button>
+        {showDelete && <p>You Have Successfully Deleted Your Credit Card</p>}
         </>
 
     )
