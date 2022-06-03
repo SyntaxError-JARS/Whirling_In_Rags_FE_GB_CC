@@ -6,7 +6,7 @@ import './OrderTable.css';
 
 export default function CreateOrder(){
 
-    const idInput = useRef();
+    //const idInput = useRef();
     const menuItemInput = useRef();
     const commentInput = useRef();
     const isFavoriteInput = useRef();
@@ -19,7 +19,7 @@ export default function CreateOrder(){
     async function addOrder(){
 
         const order = {
-            id: idInput.current.value,
+            //id: defaultValue,
             menuItem: menuItemInput.current.value,
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
@@ -46,8 +46,6 @@ export default function CreateOrder(){
         <h3>Welcome, Please Enter Your Order Below</h3>
         <br></br>
         <br></br>
-        <br></br>
-        <input placeholder="Enter ID" ref={idInput}></input>
         <br></br>
         <input placeholder="Enter Menu Item" ref={menuItemInput}></input>
         <br></br>
