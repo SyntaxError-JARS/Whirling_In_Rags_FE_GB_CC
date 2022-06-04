@@ -4,16 +4,18 @@ import { CustomerNavBar } from "../Customer/CustomerNavBar";
 
 import './OrderTable.css';
 
+
+
 export default function CreateOrder(){
 
     //const idInput = useRef();
+    
     const menuItemInput = useRef();
     const commentInput = useRef();
     const isFavoriteInput = useRef();
     const orderDateInput = useRef();
     const usernameInput = useRef();
-   
-
+    
     const url = "https://whrilinginrags.azurewebsites.net"
 
     async function addOrder(){
@@ -24,14 +26,17 @@ export default function CreateOrder(){
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
             orderDate: orderDateInput.current.value,
-            username: usernameInput.current.value
+            username: usernameInput.current.value,
+            
         }
 
 
         try{
-            const response = await axios.post(`${url}/order/createorder` , order )
+            const response = await axios.post(`${url}/order/createorder` , order)
+        
             console.log(response)
             console.log(response.data)
+        
         }catch(error){
             console.error(error.response.data)
             console.log(error)

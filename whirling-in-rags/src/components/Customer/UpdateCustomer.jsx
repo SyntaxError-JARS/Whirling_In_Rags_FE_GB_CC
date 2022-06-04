@@ -24,7 +24,7 @@ export default function UpdateCustomer(){
             
             const returnedUser = response1.data
             returnedUser.password = newPasswordInput
-            const response = await axios.put(`${url}/customer/update-username`)
+            const response = await axios.put(`${url}/customer/update-username`,)
 
             console.log(response)
             console.log(response.data) 
