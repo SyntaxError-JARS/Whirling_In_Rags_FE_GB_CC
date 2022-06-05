@@ -26,7 +26,7 @@ export default function ViewOrders(){
         try{
             console.log(usernameInput.current.value )
             //const encodedPara = encodeURIComponent(usernameinput)
-            const response = await axios.get(`${url}/order/whirling-in-rangs-orders?=orderDate${usernameInput.current.value}`)
+            const response = await axios.get(`${url}/order/whirling-in-rangs-orders?orderdate=${usernameInput.current.value}`)
             const orders = await response.data;
             const menuItemsTableRows = orders.map((e) => {
             return (

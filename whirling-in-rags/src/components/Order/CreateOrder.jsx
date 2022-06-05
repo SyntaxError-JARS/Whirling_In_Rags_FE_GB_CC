@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CustomerNavBar } from "../Customer/CustomerNavBar";
 
 import './OrderTable.css';
@@ -8,20 +8,32 @@ import './OrderTable.css';
 
 export default function CreateOrder(){
 
-    //const idInput = useRef();
+    const [showMessage, setShowMessage] = useState(false);
     
+    const idInput = useRef();
     const menuItemInput = useRef();
     const commentInput = useRef();
     const isFavoriteInput = useRef();
     const orderDateInput = useRef();
     const usernameInput = useRef();
+    const costInput = useRef();
+    const [balance, setBalanceInput] = useState(0);
+    const payBalanceInput = useRef();
     
     const url = "https://whrilinginrags.azurewebsites.net"
 
+     function payBalance(){
+        if(balance === 0 || parseInt(payBalanceInput.current.value) > balance){
+            setShowMessage(!showMessage)
+            
+        }else{
+           setBalanceInput(balance - parseInt(payBalanceInput.current.value));
+        }
+    }
     async function addOrder(){
 
         const order = {
-            //id: defaultValue,
+            id: idInput.current.value,
             menuItem: menuItemInput.current.value,
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
@@ -33,15 +45,25 @@ export default function CreateOrder(){
 
         try{
             const response = await axios.post(`${url}/order/createorder` , order)
-        
+            addToBalance();
             console.log(response)
             console.log(response.data)
         
         }catch(error){
-            console.error(error.response.data)
+            console.error(error)
             console.log(error)
         }
 
+    }
+
+    function addToBalance(){
+        console.log(costInput.current.value)
+        
+        setBalanceInput(balance + parseInt(costInput.current.value))
+
+        
+        console.log(balance)
+        console.log(costInput)
     }
 
 
@@ -51,6 +73,9 @@ export default function CreateOrder(){
         <h3>Welcome, Please Enter Your Order Below</h3>
         <br></br>
         <br></br>
+        <input placeholder="Input id" ref={idInput}></input>
+        <br></br>
+        <p>Balance is {balance}</p>
         <br></br>
         <input placeholder="Enter Menu Item" ref={menuItemInput}></input>
         <br></br>
@@ -62,7 +87,18 @@ export default function CreateOrder(){
         <br></br>
         <input  placeholder="Username" ref={usernameInput}></input>
         <br></br>
+        <input placeholder="Input the cost of the item" ref={costInput}></input>
+        <br></br>
         <button onClick={addOrder}>Create Order</button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+       {/* <button onClick={addToBalance}>add to balance</button> */}
+       <input placeholder="Input the amount you put into the site" ref={payBalanceInput}></input>
+        <button onClick={payBalance}>Pay Balance</button>
+        {showMessage && <p>Your balance is zero or you are trying to overpay</p>}
+
         </>
     )
 
