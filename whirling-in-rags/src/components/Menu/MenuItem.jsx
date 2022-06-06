@@ -2,7 +2,7 @@ import axios from "axios"
 import { useRef, useState } from "react";
 import { NavBar } from "../NavBar";
 
-import './MenuTable.css'
+//import './MenuTable.css'
 
 
 
