@@ -8,9 +8,12 @@ import './OrderTable.css';
 
 export default function CreateOrder(){
 
+
     const [showMessage, setShowMessage] = useState(false);
     
-    const idInput = useRef();
+    const idInput = useRef()
+    const [num, setNum] = useState(0);
+
     const menuItemInput = useRef();
     const commentInput = useRef();
     const isFavoriteInput = useRef();
@@ -22,6 +25,7 @@ export default function CreateOrder(){
     
     const url = "https://whrilinginrags.azurewebsites.net"
 
+
      function payBalance(){
         if(balance === 0 || parseInt(payBalanceInput.current.value) > balance){
             setShowMessage(!showMessage)
@@ -30,10 +34,19 @@ export default function CreateOrder(){
            setBalanceInput(balance - parseInt(payBalanceInput.current.value));
         }
     }
+  
     async function addOrder(){
 
+       
+
+          
+
         const order = {
+
             id: idInput.current.value,
+
+            id: num,
+
             menuItem: menuItemInput.current.value,
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
@@ -41,6 +54,9 @@ export default function CreateOrder(){
             username: usernameInput.current.value,
             
         }
+
+        console.log(order)
+        console.log(num)
 
 
         try{
@@ -56,6 +72,7 @@ export default function CreateOrder(){
 
     }
 
+
     function addToBalance(){
         console.log(costInput.current.value)
         
@@ -67,10 +84,19 @@ export default function CreateOrder(){
     }
 
 
+    function randomNumberInRange(min, max) {
+        // 👇️ get number between min (inclusive) and max (inclusive)
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+    const click = () => {setNum(randomNumberInRange(1,100))}
+
+
     return(
         <>
+        <center>
         <CustomerNavBar />
-        <h3>Welcome, Please Enter Your Order Below</h3>
+        
         <br></br>
         <br></br>
         <input placeholder="Input id" ref={idInput}></input>
@@ -98,6 +124,12 @@ export default function CreateOrder(){
        <input placeholder="Input the amount you put into the site" ref={payBalanceInput}></input>
         <button onClick={payBalance}>Pay Balance</button>
         {showMessage && <p>Your balance is zero or you are trying to overpay</p>}
+
+
+        <br></br>
+        <button class="B1" onClick={() => {addOrder(); click()}}>Create Order</button>
+        
+        </center>
 
         </>
     )

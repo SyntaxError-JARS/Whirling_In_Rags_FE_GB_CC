@@ -7,17 +7,17 @@ export default function CreateMenuItem(){
 
     const [showPost, setShowPosted] = useState(false);
 
-    const itemnameInput = useRef();
+    const itemNameInput = useRef();
     const costInput = useRef();
     const isSubstitutableInput = useRef();
     const proteinInput = useRef();
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
-    async function createmenuItems(){
+    async function createMenuItems(){
 
         const menuItem = {
-            menuItem: itemnameInput.current.value,
+            menuItem: itemNameInput.current.value,
             cost: costInput.current.value,
             isSubstitutable: isSubstitutableInput.current.value,
             protein: proteinInput.current.value
@@ -38,12 +38,14 @@ export default function CreateMenuItem(){
 
     return(
         <>
+        <center>
         <AdminNavBar />
-        <h3>Welcome, Please Enter The New Item You Would Like To Add To The Menu</h3>
+        <br></br>
+        <h2>Please Enter The New Item You Would Like To Add To The Menu</h2>
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Item Name" ref={itemnameInput}></input>
+        <input placeholder="Item Name" ref={itemNameInput}></input>
         <br></br>
         <input placeholder="Cost" ref={costInput}></input>
         <br></br>
@@ -51,12 +53,14 @@ export default function CreateMenuItem(){
         <br></br>
         <input  placeholder="Protein" ref={proteinInput}></input>
         <br></br>
-        <button onClick={() => { 
-            createmenuItems(); 
+        <br></br>
+        <button class="B1" onClick={() => { 
+            createMenuItems(); 
             setShowPosted(!showPost) 
             }}
             >Create Menu Item</button>
-        {showPost && <p>You Have Successfully Added This Menu Item</p>}
+        
+        </center>
         
         </>
     )

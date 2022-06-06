@@ -11,8 +11,11 @@ export default function AdminDashboard(){
 //const navigate = useNavigate
     return(
         <>
+        <center>
         <AdminNavBar />
-<h1>hello I am an admin</h1>
+        <br></br>
+<h2>Welcome back Admin!</h2>
+</center>
 </>
     )
 }

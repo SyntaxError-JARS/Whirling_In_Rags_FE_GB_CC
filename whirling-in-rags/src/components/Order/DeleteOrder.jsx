@@ -17,7 +17,7 @@ export default function DeleteOrder(){
 
 
         try{
-            const response = await axios.delete(`${url}/order/delete-order?order=${idInput.current.value}` )
+            const response = await axios.delete(`${url}/order/delete-order?id=${idInput.current.value}` )
 
             console.log(response)
             console.log(response.data)
@@ -30,8 +30,10 @@ export default function DeleteOrder(){
    
     return(
         <>
+        <center>
               <CustomerNavBar />
-      <h3>Please enter the ID of the order you would like to delete</h3>
+              <br></br>
+      <h2>Please enter the ID of the order you would like to delete</h2>
         <br></br>
         <br></br>
         <br></br>
@@ -41,12 +43,14 @@ export default function DeleteOrder(){
 
         <br></br>
         <br></br>
-        <button onClick={() => { 
+        <button class="B1" onClick={() => { 
             deleteOrder(); 
             setShowDeleted(!showDelete) 
             }}
             >Delete Order</button>
         {showDelete && <p>You Have Successfully Deleted Your Order</p>}
+        
+        </center>
         </>
         
         

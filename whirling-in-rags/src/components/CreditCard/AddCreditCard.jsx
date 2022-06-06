@@ -42,8 +42,10 @@ export default function AddCreditCard(){
 
     return(
         <>
+        <center>
         <CustomerNavBar />
-        <h3>Please Enter Your Credit Card Information Below</h3>
+        <br></br>
+        <h2>Please Enter Your Credit Card Information Below</h2>
         <br></br>
         <br></br>
         <br></br>
@@ -61,9 +63,10 @@ export default function AddCreditCard(){
         <br></br>
         <input placeholder="Enter your username" ref={usernameInput}></input>
         <br></br>
-        <button onClick={addCredit}>Add Credit Card</button>
+        <br></br>
+        <button class="B1" onClick={addCredit}>Add Credit Card</button>
 
-
+        </center>
         </>
     )
 

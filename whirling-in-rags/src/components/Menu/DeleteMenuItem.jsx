@@ -8,6 +8,7 @@ import { AdminNavBar } from "../Admin/AdminNavBar";
 
 export default function DeleteMenuItem(){
 
+   
     const [showDelete, setShowDeleted] = useState(false);
 
     const menuItemInput = useRef();
@@ -33,8 +34,10 @@ export default function DeleteMenuItem(){
 
     return(
         <>
+        <center>
           <AdminNavBar />
-      <h3>Please enter the Menu Item You Would Like To Delete</h3>
+          <br></br>
+      <h2>Please enter the Menu Item You Would Like To Delete</h2>
         <br></br>
         <br></br>
         <br></br>
@@ -44,12 +47,13 @@ export default function DeleteMenuItem(){
 
         <br></br>
         <br></br>
-        <button onClick={() => { 
+        <button class="B1" onClick={() => { 
             deleteMenuItem(); 
             setShowDeleted(!showDelete) 
             }}
             >Delete Menu Item</button>
         {showDelete && <p>You Have Successfully Deleted This Menu Item</p>}
+        </center>
         </>
 
     )

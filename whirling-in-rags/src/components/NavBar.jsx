@@ -1,17 +1,33 @@
 import { useNavigate } from "react-router-dom"
+import './Style.css'
+
+
+
 
 export function NavBar(){
 
     const navigate = useNavigate();
 
     return(
+        <>
+        
 <nav>
-       
-            <button onClick={() => navigate("/")}>Home</button>
-            <button onClick={() => navigate("/login")}>Login</button>
-            <button onClick={() => navigate("/register")}>Register</button>
-            <button onClick={() => navigate("/view-menu")}>View Menu</button>
+
+
+          <center>
             
+            <button class="B1" onClick={() => navigate("/")}>Home</button>  
+             
+            <button class="B1" onClick={() => navigate("/login")}>Login</button>
+
+            <button class="B1" onClick={() => navigate("/register")}>Register</button>
+            
+           <button class="B1" onClick={() => navigate("/view-menu")}>View Menu</button>
+            
+            
+           
+            
+            </center>
             
             
             
@@ -19,5 +35,6 @@ export function NavBar(){
         
 </nav>
 
+</>
     );
 }

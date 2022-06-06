@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Timmana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Timmana&display=swap');
+
+
+body {
+  height: 100%;
+  background: url("C:\Users\cathe\Downloads\Disco-Elysium-screen-shot-video-games-1748863-wallhere.com.jpg");
+  background-size: cover;
+}
+
+
+
+
+  
+   
+   /* CSS */
+   .B1 {
+    font-family: 'Bayon', sans-serif;
+     font-size: 16px;
+     letter-spacing: 2px;
+     text-decoration: none;
+     text-transform: uppercase;
+     color: #000;
+     cursor: pointer;
+     border: 3px solid;
+     padding: 0.25em 0.5em;
+     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+     position: relative;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     margin-right: 30px;
+     
+   }
+   
+   .B1:active {
+     box-shadow: 0px 0px 0px 0px;
+     top: 5px;
+     left: 5px;
+   }
+   
+   @media (min-width: 768px) {
+     .B1 {
+       padding: 0.25em 0.75em;
+     }
+   }
+
+      /* CSS */
+      .B2 {
+        font-family: 'Bayon', sans-serif;
+     font-size: 20px;
+     letter-spacing: 2px;
+     text-decoration: none;
+     text-transform: uppercase;
+     color: #000;
+     cursor: pointer;
+     border: 3px solid;
+     padding: 1em 2em;
+     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+     position:relative; left: 250px; top: 150px;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     margin-right: 30px;
+    }
+     
+   
+        
+      
+
+        .B2:active {
+            box-shadow: 0px 0px 0px 0px;
+            top: 150px;
+            left: 250px;
+          }
+          
+          @media (min-width: 768px) {
+            .B2 {
+              padding: 1em 1em;
+            }
+          }
+
+          .B2 {
+            animation-duration: 1s;
+            animation-name: slidein;
+          }
+          
+          @keyframes slidein {
+            from {
+              margin-left: 100%;
+              
+            }
+          
+            to {
+              margin-left: 0%;
+              
+            }
+          }
+          
+      
+  
+      
+   
+
+h1 {
+    font-family: 'Bayon', sans-serif;
+    color: white;
+    size: 100px;
+    position:relative; left:100px;
+}
+
+.Login {
+    position:relative; top:100px;
+}
+
+
+h2 {
+    font-family: 'Bayon', sans-serif;
+    color: white;
+    size: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

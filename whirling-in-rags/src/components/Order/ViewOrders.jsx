@@ -8,6 +8,9 @@ export default function ViewOrders(){
     const [orderBody, setOrderBody] = useState();
     const [showMessage, setShowMessage] = useState(false);
 
+    //const [searchParam] = useState(["capital", "name"]);
+
+
 
     const usernameInput = useRef();
 
@@ -30,6 +33,9 @@ export default function ViewOrders(){
             const orders = await response.data;
             const menuItemsTableRows = orders.map((e) => {
             return (
+                <>
+            
+
                 <tr>
                     <td>{e.id}</td>
                     <td>{e.menuItem}</td>
@@ -38,9 +44,11 @@ export default function ViewOrders(){
                     <td>{e.orderDate}</td>
                     <td>{e.username}</td>
                 </tr>
+                </>
             )
            
-        })
+        }
+        )
     
         setOrderBody(menuItemsTableRows)
         console.log(response)
@@ -55,25 +63,33 @@ export default function ViewOrders(){
 
     return(
         <>
+        <center>
      <CustomerNavBar />
-        <h3>Welcome to the Orders Page</h3>
         
+        <br></br>
+        <br></br>
+        <br></br>
         <input placeholder="Input your Username" ref={usernameInput}></input>
-        <button onClick={ viewAllOrders }>Press to Find All of your Orders</button>
+        <br></br>
+        <br></br>
+        <button class="B1" onClick={ viewAllOrders }>Press to Find All of your Orders</button>
         {showMessage && <p>No username was detected please input your username and try again</p>}
+        <br></br>
+        <br></br>
         <table>
             <thead>
                 <tr>
                     <th>Order Id</th>
                     <th>Menu Item</th>
                     <th>Comment</th>
-                    <th>isFavorite</th>
+                    <th>Favorite</th>
                     <th>Order Date</th>
                     <th>Username</th>
                 </tr>
             </thead>
             <tbody>{orderBody}</tbody>
         </table>
+        </center>
 
         </>
     )
