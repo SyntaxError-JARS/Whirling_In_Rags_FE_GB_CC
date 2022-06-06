@@ -14,7 +14,11 @@ export default function CustomerDashboard(){
     return(
         <>
         <CustomerNavBar />
-<h1>hello customer</h1>
+        <center>
+            <br></br>
+            <br></br>
+<h2>Welcome Back!</h2>
+</center>
 </>
     )
 }

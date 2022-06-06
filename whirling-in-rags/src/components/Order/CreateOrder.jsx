@@ -58,8 +58,9 @@ export default function CreateOrder(){
 
     return(
         <>
+        <center>
         <CustomerNavBar />
-        <h3>Welcome, Please Enter Your Order Below</h3>
+        
         <br></br>
         <br></br>
         <br></br>
@@ -73,7 +74,10 @@ export default function CreateOrder(){
         <br></br>
         <input  placeholder="Username" ref={usernameInput}></input>
         <br></br>
-        <button onClick={() => {addOrder(); click()}}>Create Order</button>
+        <br></br>
+        <button class="B1" onClick={() => {addOrder(); click()}}>Create Order</button>
+        
+        </center>
         </>
     )
 

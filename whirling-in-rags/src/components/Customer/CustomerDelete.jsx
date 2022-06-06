@@ -35,22 +35,25 @@ export default function CustomerDelete(){
 
     return(
         <>
+        <center>
           <CustomerNavBar />
-      <h3>Are you sure you want to delete your account? If so please enter your Username and hit the delete credit card button.</h3>
+      <h2>Are you sure you want to delete your account? <br></br>If so please verify your username below</h2>
         <br></br>
         <br></br>
         <br></br>
         <input placeholder="Enter your Username Here" ref={customerInput}></input>
 
         
-
+<br></br>
         <br></br>
-        <button onClick={() => { 
+        <button class="B1" onClick={() => { 
             deleteCustomer(); 
             setShowDeleted(!showDelete) 
             }}
             >Delete Account</button>
         {showDelete && <p>You Have Successfully Deleted Your Account</p>}
+       
+        </center>
         </>
     )
 }

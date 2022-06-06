@@ -1,15 +1,28 @@
-import { NavBar } from "./NavBar";
+
+import './Style.css';
+import { WelcomeNavBar } from './WelcomeNavBar';
+
+
+
 
 
 export default function Welcome(){
+
+
+    
     
     return(
+        
        <>
-       <NavBar />
+ 
+    <WelcomeNavBar />
+     
             <center>
-            <h1>Whirling in Rags</h1>
+            
+          
             
             </center>
+            
             </>
 
     )

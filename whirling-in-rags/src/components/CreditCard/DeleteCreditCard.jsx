@@ -34,8 +34,10 @@ export default function DeleteCreditCard(){
 
     return(
         <>
+        <center>
           <CustomerNavBar />
-      <h3>Are you sure you want to delete your creditcard? If so please enter your Credit Card Number and hit the delete credit card button.</h3>
+          <br></br>
+      <h2>Enter the number of the credit card you would like to delete</h2>
         <br></br>
         <br></br>
         <br></br>
@@ -44,12 +46,15 @@ export default function DeleteCreditCard(){
         
 
         <br></br>
-        <button onClick={() => { 
+        <br></br>
+        <button class="B1" onClick={() => { 
             deleteCreditCard(); 
             setShowDeleted(!showDelete) 
             }}
             >Delete CreditCard</button>
         {showDelete && <p>You Have Successfully Deleted Your Credit Card</p>}
+        
+        </center>
         </>
 
     )

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef } from "react";
  import { useNavigate } from "react-router-dom";
 import { NavBar } from "../NavBar";
-//import { userContext } from "../../App";
+
 
 export default function CustomerLogIn() {
     const usernameInput = useRef();
@@ -40,10 +40,16 @@ export default function CustomerLogIn() {
     return (
         <>
         <NavBar />
-            <h4>Welcome back, please log in below.</h4>
+        <div class="Login">
+            <center>
             <input placeholder="Enter username" ref={usernameInput}></input>
+            <span></span>
             <input type="password" placeholder="Enter password" ref={passwordInput}></input>
-            <button onClick={login}>Login</button>
+            <br></br>
+            <br></br>
+            <button class="B1" onClick={login}>Login</button>
+            </center>
+            </div>
         </>
     );
 }

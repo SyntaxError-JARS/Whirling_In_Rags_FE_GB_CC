@@ -2,6 +2,10 @@ import axios from "axios"
 import { useRef, useState } from "react";
 import { NavBar } from "../NavBar";
 
+import './MenuTable.css'
+
+
+
 export default function MenuItem(){
 
  
@@ -86,29 +90,35 @@ export default function MenuItem(){
     return(
         <>
         <NavBar />
-    
-        <h3>Welcome, To The Whirling in Rags Menu Page</h3>
+        
+    <center>
+        <br></br>
+        <h2>Menu</h2>
         
         <br></br>
         <input placeholder="Enter here the menu item you are looking for" ref={menuitemInputs} /> 
         <br></br>
-        <button  onClick={findAsingleItem}>Press to Find the Item you are looking for</button>
         <br></br>
-        <button onClick={getAllMenuItems}>Press to Find All of the Menu Items</button>
+        <button class="B1" onClick={findAsingleItem}>Press to Find the Item you are looking for</button>
+        <br></br>
+        <br></br>
+        <button class="B1" onClick={getAllMenuItems}>Press to Find All of the Menu Items</button>
     
+        <br></br>
+        <br></br>
         <table>
             <thead>
                 <tr>
                     
                     <th>Item Name</th>
                     <th>Cost</th>
-                    <th>Is isSubstitutable</th>
+                    <th>Is Substitutable</th>
                     <th>Protein</th>
                 </tr>
             </thead>
             <tbody>{menuBody}</tbody>
         </table>
-
+</center>
         </>
     )
 }
