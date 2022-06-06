@@ -79,6 +79,9 @@ export default function CustMenuItem(){
         <input placeholder="Enter here the menu item you are looking for" ref={menuitemInputs} /> 
         <br></br>
         <br></br>
+
+       
+
         <button  class="B1"onClick={findAsingleItem}>Press to Find the Item you are looking for</button>
         <br></br>
         <br></br>
@@ -86,6 +89,7 @@ export default function CustMenuItem(){
     <br></br>
     <br></br>
     <br></br>
+
         <table>
             <thead>
                 <tr>

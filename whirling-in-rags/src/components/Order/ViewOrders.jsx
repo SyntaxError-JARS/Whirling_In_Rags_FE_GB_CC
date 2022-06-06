@@ -20,16 +20,16 @@ export default function ViewOrders(){
     // if(usernameInput === null ){}
     async function viewAllOrders(){
 
-        const usernameinput = {
-            username: usernameInput.current.value 
-        }
+        // const usernameinput = {
+        //     username: usernameInput.current.value 
+        // }
         if(usernameInput.current.value === ""){
             setShowMessage(!showMessage)
         }else{
         try{
-            console.log(usernameInput)
-            const encodedPara = encodeURIComponent(usernameinput)
-            const response = await axios.get(`${url}/order/whirling-in-rangs-orders?=username${encodedPara}`)
+            console.log(usernameInput.current.value )
+            //const encodedPara = encodeURIComponent(usernameinput)
+            const response = await axios.get(`${url}/order/whirling-in-rangs-orders?orderdate=${usernameInput.current.value}`)
             const orders = await response.data;
             const menuItemsTableRows = orders.map((e) => {
             return (

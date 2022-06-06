@@ -14,11 +14,13 @@ import CreateOrder from "./components/Order/CreateOrder";
 import ViewOrders from "./components/Order/ViewOrders";
 import Welcome from "./components/Welcome";
 import CustomerDelete from "./components/Customer/CustomerDelete";
+import UpdateCustomer from "./components/Customer/UpdateCustomer";
 import DeleteMenuItem from "./components/Menu/DeleteMenuItem";
 import DeleteOrder from "./components/Order/DeleteOrder";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './components/Style.css'
+
 
 
 
@@ -80,6 +82,7 @@ function App(){
         <Route path="" element={<Welcome />} />
         <Route path="customer" element={<CustomerDashboard />} />
         <Route path="/customer/delete-account" element={<CustomerDelete />} />
+        <Route path="/customer/update-username" element={<UpdateCustomer />} />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="/customer/delete-order" element={<DeleteOrder />} />
         </Routes>

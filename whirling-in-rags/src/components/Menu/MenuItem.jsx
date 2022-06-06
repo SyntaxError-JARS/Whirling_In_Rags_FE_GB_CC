@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useRef, useState } from "react";
+import { CustomerNavBar } from "../Customer/CustomerNavBar";
 import { NavBar } from "../NavBar";
 
 import './MenuTable.css'
@@ -51,16 +52,16 @@ export default function MenuItem(){
     async function findAsingleItem(){
         
         const menuitem =  menuitemInputs.current.value
-        
+        console.log("hello")
 
     
         try{
         const encodedValue = encodeURIComponent(menuitem)
         console.log(menuitem)
-        const response = await axios.get(`${url}/menu/whirling-in-rangs-menu?menuItem=${encodedValue}`)
-        const item = await response.data;
+        const response1 = await axios.get(`${url}/menu/whirling-in-rangs-menu?menuItem=${encodedValue}`)
+        const item = await response1.data;
         console.log(item)
-        const map = {a:response.data}
+        const map = {a:response1.data}
         const newArray = Object.values(map)
         console.log(newArray)
         const menuItemTableRow = newArray.map((e) => {
@@ -79,8 +80,8 @@ export default function MenuItem(){
          
         
             
-        console.log(response)
-        console.log(response.data)
+        console.log(response1)
+        console.log(response1.data)
         }catch(error){
         console.error(error)
         console.log(error)
@@ -89,11 +90,14 @@ export default function MenuItem(){
 
     return(
         <>
+
+        
         <NavBar />
         
     <center>
         <br></br>
         <h2>Menu</h2>
+
         
         <br></br>
         <input placeholder="Enter here the menu item you are looking for" ref={menuitemInputs} /> 

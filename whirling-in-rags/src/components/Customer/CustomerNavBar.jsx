@@ -8,6 +8,7 @@ export function CustomerNavBar(){
         <>
         <center>
         <nav>
+
         <button class="B1" onClick={() => navigate("/customer")}>Home</button>
         <button class="B1" onClick={() => navigate("/customer/order-history")}>Order History</button>
         <button class="B1" onClick={() => navigate("/customer/view-menu")}>View Menu</button>
@@ -17,6 +18,7 @@ export function CustomerNavBar(){
         <button class="B1" onClick={() => navigate("/customer/delete-card")}>Delete a Credit Card</button>
         <button class="B1" onClick={() => navigate("/customer/delete-account")}>Delete your account</button>
         <button class="B1" onClick={() => navigate("/")}>Logout</button>
+
 
 
         </nav>
