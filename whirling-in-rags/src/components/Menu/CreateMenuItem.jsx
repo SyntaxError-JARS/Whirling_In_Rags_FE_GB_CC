@@ -1,20 +1,23 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { AdminNavBar } from "../Admin/AdminNavBar";
 import './MenuTable.css';
 
 export default function CreateMenuItem(){
 
-    const itemnameInput = useRef();
+    const [showPost, setShowPosted] = useState(false);
+
+    const itemNameInput = useRef();
     const costInput = useRef();
     const isSubstitutableInput = useRef();
     const proteinInput = useRef();
 
     const url = "https://whrilinginrags.azurewebsites.net"
 
-    async function createmenuItems(){
+    async function createMenuItems(){
 
         const menuItem = {
-            menuItem: itemnameInput.current.value,
+            menuItem: itemNameInput.current.value,
             cost: costInput.current.value,
             isSubstitutable: isSubstitutableInput.current.value,
             protein: proteinInput.current.value
@@ -22,7 +25,7 @@ export default function CreateMenuItem(){
 
 
         try{
-            const response = await axios.post(`${url}/menu/createmenuitem` , menuItem )
+            const response = await axios.post(`${url}/menu/create-item` , menuItem )
             console.log(response)
             console.log(response.data)
         }catch(error){
@@ -35,19 +38,30 @@ export default function CreateMenuItem(){
 
     return(
         <>
-        <h3>Welcome, Please Enter The New Item You Would Like To Add To The Menu</h3>
+        <center>
+        <AdminNavBar />
+        <br></br>
+        <h2>Please Enter The New Item You Would Like To Add To The Menu</h2>
         <br></br>
         <br></br>
         <br></br>
-        <input placeholder="Enter the Items Name" ref={itemnameInput}></input>
+        <input placeholder="Item Name" ref={itemNameInput}></input>
         <br></br>
-        <input placeholder="Enter How Much The Item Costs" ref={costInput}></input>
+        <input placeholder="Cost" ref={costInput}></input>
         <br></br>
-        <input placeholder="Enter If The Item Can Be Substitutable" ref={isSubstitutableInput}></input>
+        <input placeholder="Can This Be Substitutable?" ref={isSubstitutableInput}></input>
         <br></br>
-        <input  placeholder="Enter How Much Protein The New Item Contains" ref={proteinInput}></input>
+        <input  placeholder="Protein" ref={proteinInput}></input>
         <br></br>
-        <button onClick={createmenuItems}>Create Item</button>
+        <br></br>
+        <button class="B1" onClick={() => { 
+            createMenuItems(); 
+            setShowPosted(!showPost) 
+            }}
+            >Create Menu Item</button>
+        
+        </center>
+        
         </>
     )
 
